@@ -13,7 +13,7 @@ class PetSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Pet
-        fields = ['name', 'picture', 'age', 'type', 'owner']
+        fields = ['name', 'picture', 'birthday', 'type', 'owner']
 
     def create(self, validated_data):
         return Pet.objects.create(**validated_data)

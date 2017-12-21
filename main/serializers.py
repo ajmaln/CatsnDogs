@@ -9,7 +9,7 @@ class PetSerializer(serializers.ModelSerializer):
         ('2', "Dog"),
     )
     owner = serializers.SlugRelatedField(queryset=User.objects.all(), slug_field='username', required=False, many=False)
-    type = serializers.ChoiceField(choices=PET_TYPES, required=False)
+    type = serializers.ChoiceField(choices=PET_TYPES, required=False, source='get_type_display')
 
     class Meta:
         model = Pet
@@ -25,3 +25,6 @@ class PetSerializer(serializers.ModelSerializer):
         instance.owner = validated_data.get('owner', instance.owner)
         instance.save()
         return instance
+
+    def get_type(self):
+        return

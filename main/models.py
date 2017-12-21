@@ -9,7 +9,7 @@ class Pet(models.Model):
     )
     name = models.CharField(max_length=200)
     picture = models.URLField(null=True, blank=True, default=None)
-    age = models.IntegerField()
+    birthday = models.DateField(null=True)
     type = models.CharField(choices=PET_TYPES, max_length=5)
     owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 

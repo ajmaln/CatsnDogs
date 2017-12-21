@@ -21,7 +21,7 @@ class PetSerializer(serializers.ModelSerializer):
     def update(self, instance, validated_data):
         instance.name = validated_data.get('name', instance.name)
         instance.picture = validated_data.get('picture', instance.picture)
-        instance.age = validated_data.get('age', instance.age)
+        instance.birthday = validated_data.get('birthday', instance.birthday)
         instance.owner = validated_data.get('owner', instance.owner)
         instance.save()
         return instance

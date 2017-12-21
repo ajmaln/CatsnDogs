@@ -14,5 +14,5 @@ class Pet(models.Model):
     owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
-        return self.name
+        return self.name + ' - ' + self.get_type_display() + ' - Owner: ' + self.owner.username
 

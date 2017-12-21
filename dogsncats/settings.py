@@ -25,7 +25,7 @@ SECRET_KEY = 'zp@3*jioo*ovo8gnd3_-ai14i(%+z!fpg$6_(3gz)6)$bc4-1+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

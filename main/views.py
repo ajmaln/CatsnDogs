@@ -82,3 +82,7 @@ def dog_list(request, user=None, pk=None):
                 return HttpResponse('{"error": "Pet does not exist"}', status=400)
         else:
             return HttpResponse('{"error": "Please specify the pet id"}', status=400)
+
+
+def index(request):
+    return render(request, 'index.html', {})

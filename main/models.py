@@ -16,3 +16,26 @@ class Pet(models.Model):
     def __str__(self):
         return self.name + ' - ' + self.get_type_display() + ' - Owner: ' + self.owner.username
 
+
+class CatManager(models.Manager):
+    def get_queryset(self):
+        return super(CatManager, self).get_queryset().filter(type='1')
+
+
+class DogManager(models.Manager):
+    def get_queryset(self):
+        return super(DogManager, self).get_queryset().filter(type='2')
+
+
+class Dog(Pet):
+    objects = DogManager()
+
+    class Meta:
+        proxy = True
+
+
+class Cat(Pet):
+    objects = CatManager()
+
+    class Meta:
+        proxy = True
